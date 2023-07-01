@@ -45,11 +45,10 @@ public class PortfolioVaRCalculator {
         validateTrades(trades);
         validateConfidenceLevel(confidenceLevel);
 
-        List<Double> portfolioPnLs = extractPnLs(trades);
 
         List<Double> tradeVaRs = new ArrayList<>();
         for (Trade trade : trades) {
-            double tradeVaR = calculateSingleTradeVaR(portfolioPnLs, trade.getPnl(), confidenceLevel);
+            double tradeVaR = calculateSingleTradeVaR(trade.getPnlVector(), trade.getPnl(), confidenceLevel);
             tradeVaRs.add(tradeVaR);
         }
 
@@ -85,19 +84,6 @@ public class PortfolioVaRCalculator {
         }
     }
 
-    /**
-     * Extracts the P&L values from the list of trades.
-     *
-     * @param trades  List of trades
-     * @return        List of P&L values
-     */
-    private static List<Double> extractPnLs(List<Trade> trades) {
-        List<Double> portfolioPnLs = new ArrayList<>();
-        for (Trade trade : trades) {
-            portfolioPnLs.add(trade.getPnl());
-        }
-        return portfolioPnLs;
-    }
 
     /**
      * Calculates the VaR for a single trade based on the historical values, P&L value, and confidence level.
@@ -161,7 +147,7 @@ public class PortfolioVaRCalculator {
                 String[] data = line.split(",");
                 String tradeId = data[0];
                 String[] pnlValues = data[1].split(";");
-                double pnl = parseDoubleValue(data[2]);
+                double pnl = parseDoubleValue(data[3]);
 
                 List<Double> pnlVector = new ArrayList<>();
                 for (String value : pnlValues) {
@@ -228,4 +214,3 @@ public class PortfolioVaRCalculator {
         }
     }
 }
-

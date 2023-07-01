@@ -38,7 +38,7 @@ public class PortfolioVaRCalculatorTest {
 
         double confidenceLevel = 0.95;
 
-        double expectedVaR = 25.0 + 25.0; // Expected VaR = VaR of Trade 1 + VaR of Trade 2
+        double expectedVaR = 150.0 + 150.0; // Expected VaR = VaR of Trade 1 + VaR of Trade 2
 
         double actualVaR = PortfolioVaRCalculator.calculateVaR(trades, confidenceLevel);
 
