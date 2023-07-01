@@ -23,7 +23,7 @@ Here are the steps : Sample input taken from the dataset provided
 
 I handled exceptions carefully.
 
-# Algorithm for the code:
+# Algorithm for the singleTradeCalculation:
 
 1)Start the VaR calculation algorithm.
 
