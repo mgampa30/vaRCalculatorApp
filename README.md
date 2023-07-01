@@ -3,9 +3,11 @@ The application consists of two components: the SingleTradeVaRCalculator and the
 
 Introduction: This document provides documentation for the VaR Calculator application, which is written in Java. The application consists of two components: the SingleTradeVaRCalculator and the PortfolioVaRCalculator.
 
-SingleTradeVaRCalculator: The SingleTradeVaRCalculator calculates the Value at Risk (VaR) for a single trade using historical values. It takes as input the historical profit and loss (P&L) values, the P&L value for the trade of interest, and the desired confidence level. The VaR is calculated using the historical simulation method. The application ensures that the provided inputs are valid, including checking for null or empty historical values, validating the confidence level range, and verifying that the P&L value is included in the historical values.
+# SingleTradeVaRCalculator: 
+The SingleTradeVaRCalculator calculates the Value at Risk (VaR) for a single trade using historical values. It takes as input the historical profit and loss (P&L) values, the P&L value for the trade of interest, and the desired confidence level. The VaR is calculated using the historical simulation method. The application ensures that the provided inputs are valid, including checking for null or empty historical values, validating the confidence level range, and verifying that the P&L value is included in the historical values.
 
-PortfolioVaRCalculator: The PortfolioVaRCalculator calculates the portfolio-level VaR by aggregating the VaR values of multiple trades. It takes as input a list of Trade objects, where each Trade represents a trade with its associated historical P&L values and the P&L value for the trade. The confidence level is also provided as input. The application validates the input trades for consistency in the length of P&L vectors and checks the confidence level range. The portfolio VaR is calculated by summing the VaR values of each individual trade.
+# PortfolioVaRCalculator: 
+The PortfolioVaRCalculator calculates the portfolio-level VaR by aggregating the VaR values of multiple trades. It takes as input a list of Trade objects, where each Trade represents a trade with its associated historical P&L values and the P&L value for the trade. The confidence level is also provided as input. The application validates the input trades for consistency in the length of P&L vectors and checks the confidence level range. The portfolio VaR is calculated by summing the VaR values of each individual trade.
 
 SingleTradeVaRCalculator: To use the application, follow these steps:
 
